@@ -1,4 +1,4 @@
-#Item 1: View C++ as a federation of languages
+# Item 1: View C++ as a federation of languages
 
 Initially C++ was just C with object-oriented features, or "C with Classes". Today's C++ is a *multiparadigm programming language*, 
 one supporting a **combination of procedural, object-oriented, functional, generic and metaprogramming features**. This power and flexibility,
