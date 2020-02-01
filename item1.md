@@ -11,5 +11,8 @@ Initially C++ was just C with object-oriented features, or "C with Classes". Tod
 * **The STL.** Standard template library. Its conventions meshed beautifully regrading **containers, iterators, algorithms, and function objects**. When you're working with the STL, its conventions has to be followed.  
 
 ### Importance of 4 sublanguages: 
-* Situations where effective programming requires you change strategy when you switch from one sublan to another
-  * Pass-by-value generally is more effecient than pass-by-reference for build-in (i.e., C-like) types. In Object-oriented C++, user-defined constructors and destructors means pass-by-reference-to-cost is usually better.
+* Cases where effective programming requires you change strategy when switching from one sublan to another
+  * In **build-in** (i.e., **C-like**) types, **Pass-by-value** is **generally more effecient** than pass-by-reference for build-in (i.e., C-like) types. 
+  * In **STL**,  **Pass-by-value** is more efficient for iterators and function objects, since they are modeled on pointers in C.
+  * In **Object-oriented C++**, user-defined constructors and destructors means **pass-by-reference-to-cost** is usually better. 
+  * In **Template C++**, **pass-by-reference-to-cost** should be used because you dont know the type of object you are dealing with.
