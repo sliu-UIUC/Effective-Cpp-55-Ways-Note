@@ -16,3 +16,8 @@ Initially C++ was just C with object-oriented features, or "C with Classes". Tod
   * In **STL**,  **Pass-by-value** is more efficient for iterators and function objects, since they are modeled on pointers in C.
   * In **Object-oriented C++**, user-defined constructors and destructors means **pass-by-reference-to-cost** is usually better. 
   * In **Template C++**, **pass-by-reference-to-cost** should be used because you dont know the type of object you are dealing with.
+
+```diff
+- Things to Remember
+```
+* Rules for effective C++ programming vary, depending on the part of C++ you're using. 
