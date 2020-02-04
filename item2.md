@@ -31,7 +31,7 @@ class GamePlayer {
 private: 
   static const int NumTurns = 5;   //constant declaration
   int scores[NumTurns];            //use of constant
-  '''
+  ...
 }
 ```
 Note: 
@@ -43,4 +43,14 @@ Note:
   
   * **#define** cannot be used to create a class-specific constant, since it don't respect scope. Once a macro is defined, it's in force for the rest of the compilation unless there is a undefine somewhere along the line. 
   * There is also no encapsulation for macros like **#define**, i.e., there is no such thing as a "private" **#define**.
+  * In-class initialization is only allowed for integral types and constants. In cases where the aboved syntax cannot be used, put initial value at the point of definition: 
+  ```C++
+  class CostEstimate {
+  private: 
+    static const double FudgeFactor;  //declaration of static class constant; goes in header file
+    ...
+  }
+  const double CostEstimate::FudgeFactor=1.35 //definition of static class constant; goes to impl. file
+  ```
+  
   
