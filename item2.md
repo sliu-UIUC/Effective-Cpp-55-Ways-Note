@@ -1,2 +1,2 @@
-# Item 2: Prefer '''consts, enums,``` and ```inlines``` to #defines.
+# Item 2: Prefer '''consts, enums, and inlines to #defines.
 
