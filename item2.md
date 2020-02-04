@@ -22,7 +22,7 @@ Ex: to define a constant char*-based string in header file
 ```C++
 const char * const authorName = "Scott Meyers";
 //or 
-const std::string authorName("Scott Meyers"); //this is generally prefered compare to the char* based progenitors.
+const std::string authorName("Scott Meyers"); //generally prefered compare to the char* based progenitors
 ```
 
 2. **Make class-specific constants 'static'** this is to **limit the scope** of a constant to a class, and make it a member and ensure there is **at most one copy** of the constant. Ex: 
