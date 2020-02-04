@@ -35,4 +35,12 @@ private:
 }
 ```
 Note: 
-  * 1a: 
+  * This ia *declaration* not a *definition*. Usually C++ requires you to provide definition for anything you use, but class-specific constants that are static and of integral types(integers, chars, bools) are an exception. If you want to take address of it(which you can't do with just a declaration) or compiler incorrectly insists on a definition, you can provide a separate definition like: 
+  ```C++
+  const int GamePlayer::NumTurns;  //definition of NumTurns
+  ```
+  Initial value is not permitted at the point of definition, because the initial value of class constants are provided where the constant is declared. Thus this code has to be put in an implementation file, not a header file. 
+  
+  * **#define** cannot be used to create a class-specific constant, since it don't respect scope. Once a macro is defined, it's in force for the rest of the compilation unless there is a undefine somewhere along the line. 
+  * There is also no encapsulation for macros like **#define**, i.e., there is no such thing as a "private" **#define**.
+  
