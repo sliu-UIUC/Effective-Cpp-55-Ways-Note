@@ -96,3 +96,8 @@ Advantage:
 3. No more parenthesis 
 4. A real function: it obeys scope and access rules.
 
+```diff
+- Things to Remember
+```
+* For simple constants, prefer const objects or enums to #defines.
+* For function-like macros, prefer inline functions to #defines.
