@@ -1,5 +1,6 @@
 # Item 2: Prefer consts, enums, and inlines to #defines.
 
+## Problem with #define
 Prefer the compiler to the preprocessor because **#define** may be treated as if it;s not part of the language per se. 
 
 For instance:  
@@ -53,7 +54,7 @@ Note:
   const double CostEstimate::FudgeFactor=1.35 //definition of static class constant; goes to impl. file
   ```
   
-  ### "the enum hack" 
+  ## II."the enum hack" 
   used when you need the value of a class constant during compilation of the class. This takes advantage of the fact that the values of an enumerated type can be used where ints are expected: 
 ```C++
 class GamePlayer {
