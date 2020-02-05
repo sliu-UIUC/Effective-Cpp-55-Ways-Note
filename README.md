@@ -4,4 +4,4 @@ This is a repository for notes I took when reading the book ***Effective C++ Thi
 ### List of Effective C++ techniques: 
 1. [View C++ as a federation of languages](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item1.md)
 2. [Prefer consts, enums, and inlines to #defines](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item2.md)
-3. [Use const whenever possible] (https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item3.md)
+3. [Use const whenever possible](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item3.md)
