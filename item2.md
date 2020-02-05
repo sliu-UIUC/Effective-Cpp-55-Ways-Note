@@ -83,3 +83,16 @@ CALL_WITH_MAX(++a, b); //a is incremented twice
 CALL_WITH_MAX(++a, b+10); //a is incremented once
 ```
 
+Solution: Using a template for an inline function that grants predictable behavior and type safety: 
+```C++
+template<typename T> 
+inline void callWithMax(const T& a, const T&b) { //because we dont know what T is
+  f(a>b ? a:b)                                   //We pass by reference to const
+}
+```
+Advantage: 
+1. Type safe - generates a whole family of functions, each of which takes two objects and return the greater
+2. No undefined behavior - evaluating parameters multiple times 
+3. No more parenthesis 
+4. A real function: it obeys scope and access rules.
+
