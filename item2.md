@@ -13,7 +13,7 @@ A nice alternative is to replace the macro with a constant:
 ```C++
 const double AspectRatio = 1.653;    //uppercase names are usually for macros, hence the name change
 ```
-Advantages are: 
+**Advantages**: 
 1. A language constant like this is ensured to be seen by compilers and entered to symbol tables. 
 2. In the case of a floating point constant, use of constant may yield smaller code than using **#define**. **With macro**, **the preprocessor's blind substitution** of the macro name ASPECT_RATIO with 1.653 could result in **multiple copies** of 1.653 in your code. **With the use of constant, only 1 copy will be generated**.
 
@@ -83,14 +83,14 @@ CALL_WITH_MAX(++a, b); //a is incremented twice
 CALL_WITH_MAX(++a, b+10); //a is incremented once
 ```
 
-Solution: Using a template for an inline function that grants predictable behavior and type safety: 
+**Solution**: Using a template for an inline function that grants predictable behavior and type safety: 
 ```C++
 template<typename T> 
 inline void callWithMax(const T& a, const T&b) { //because we dont know what T is
   f(a>b ? a:b)                                   //We pass by reference to const
 }
 ```
-Advantage: 
+**Advantage**: 
 1. Type safe - generates a whole family of functions, each of which takes two objects and return the greater
 2. No undefined behavior - evaluating parameters multiple times 
 3. No more parenthesis 
