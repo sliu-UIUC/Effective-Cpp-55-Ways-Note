@@ -1,6 +1,6 @@
 # Item 2: Prefer consts, enums, and inlines to #defines.
 
-## Problem with #define
+## I. Problem with #define
 Prefer the compiler to the preprocessor because **#define** may be treated as if it;s not part of the language per se. 
 
 For instance:  
@@ -68,5 +68,7 @@ Advantages:
 1. enum hack behaves more like #define than a const does, which is sometimes you want. It's legal to take the address of a const but not to take the address of a enum (typically also #define). If you dont want to let people get a pointer or reference to some integral constants, enum can enforce that constraint.
 2. Some sloppy conpilers may set aside storage for const objects of integral types unless you create a pointer or reference to the object. Enum can prevent this, since like #define, it never results in that kind of unnecessary memory allocation. 
 3. It's pragmatic. A lot of people use it so one should recognize it when seeing it. It's a fundamental technique of*template metaprogramming*.
+
+## III. Problem with function-like macros
 
 
