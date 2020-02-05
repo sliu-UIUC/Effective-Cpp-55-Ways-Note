@@ -53,4 +53,19 @@ Note:
   const double CostEstimate::FudgeFactor=1.35 //definition of static class constant; goes to impl. file
   ```
   
-  
+  ### "the enum hack" 
+  used when you need the value of a class constant during compilation of the class. This takes advantage of the fact that the values of an enumerated type can be used where ints are expected: 
+```C++
+class GamePlayer {
+private: 
+  enum {NumTurns=5};  //makes NumTurns a symbolic name for 5
+  int scores[NumTurns]; //fine
+  ...
+}
+```
+Advantages: 
+1. enum hack behaves more like #define than a const does, which is sometimes you want. It's legal to take the address of a const but not to take the address of a enum (typically also #define). If you dont want to let people get a pointer or reference to some integral constants, enum can enforce that constraint.
+2. Some sloppy conpilers may set aside storage for const objects of integral types unless you create a pointer or reference to the object. Enum can prevent this, since like #define, it never results in that kind of unnecessary memory allocation. 
+3. It's pragmatic. A lot of people use it so one should recognize it when seeing it. It's a fundamental technique of*template metaprogramming*.
+
+
