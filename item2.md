@@ -70,5 +70,16 @@ Advantages:
 3. It's pragmatic. A lot of people use it so one should recognize it when seeing it. It's a fundamental technique of*template metaprogramming*.
 
 ## III. Problem with function-like macros
-
+```C++
+//call f with the maximum of a and b
+#define CALL_WITH_MAX(a,b) f((a)>(b) ? (a):(b))
+```
+Some people use macros like this to reduce overhead of function calls, but it has many painful drawbacks： 
+1. **Redundancy**: number of parenthesis. Easy to make mistakes.
+2. **Undefined behavior**: weird stuff can happen, even though you get all correctly: 
+```C++
+int a=5, b = 0;
+CALL_WITH_MAX(++a, b); //a is incremented twice
+CALL_WITH_MAX(++a, b+10); //a is incremented once
+```
 
