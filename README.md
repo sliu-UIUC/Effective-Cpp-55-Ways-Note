@@ -1,4 +1,4 @@
-# *Effective C++:  55 Ways to improve your programs and designs* Note
+# *Effective C++:  55 Ways to improve your programs and designs* Note (In Progress)
 This is a repository for notes I took when reading the book ***Effective C++ Third Edition: 55 Specific Ways to Improve Your Programs and Designs*** by Scott Meyers. The note contains of what are the important takeaways from the book. Note that this is not a redistribution of the content of the book, just some note I took for me to learn more about C++ programming language and design, and hopefully this can also help others who wish to improve their design of C++ programs.
 
 ### List of Effective C++ techniques: 
