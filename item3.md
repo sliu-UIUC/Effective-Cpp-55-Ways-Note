@@ -85,8 +85,54 @@ void print(const TextBlock& ctb) {  // in this function, ctb is const
 ```
 ```diff
 + It's never legal to modify the return value of a function that returns a build-in type. 
-+ Even if it were legal, the fact that C++ returns objects by value means that a copy of value is modified, not the value itself.
++ Even if it were legal, the fact that C++ returns objects by value means that a copy of value is modified, not the value itself. 
 ```
+## Bitwise constness vs Logical constness
+The book goes in length about those two. Essentially, bitwise corstness is what is expected by the C++ compiler that not even a single bit can be modified in a const member function. That way it is easier to detect violation. Unfortunately, there are still some ways where C++ compiler would consider it as bitwise constant even though it is modified (for instance, an object that contains only a pointer would be considered bitwise constant). That leads to counterintuitive behaviors where one can invoke only const member functions and still change its value. 
+
+Logical constness is another notion stating some of the bits in a const member function can be modified only in ways that clients cannot detect: 
+```C++
+class CTextBlock {
+  public: 
+    ...
+    std::size_t length() const; 
+    
+  private: 
+    char *pText; 
+    std::size_t textLength;           // last calculated length of textblock
+    bool lengthIsValid;               // whether length is currently valid
+};
+
+std::size_t CTextBlock:::length() const {
+  if(!lengthIsValid) {
+    textLength = std::strlen(pText);  // ERROR! Can't assign to textLength
+    lengthIsValid = true;             // and lengthIsValid in a constmember function
+  }
+}
+```
+The obove code would make sense for a logical constness but it won't compile because C++ insists on bitwise constness and it's not. To bypass that, we need to use `mutable` keyword. `mutable` frees non-static data members from the constraints of bitwise constness: 
+```C++
+class CTextBlock {
+  public: 
+    ...
+    std::size_t length() const; 
+    
+  private: 
+    char *pText; 
+    mutable std::size_t textLength;           // these data members may always be modified, even in const member functions
+    mutable bool lengthIsValid;              
+};
+
+std::size_t CTextBlock:::length() const {
+  if(!lengthIsValid) {
+    textLength = std::strlen(pText);  // Now the function is OK
+    lengthIsValid = true;            
+  }
+}
+```
+
+## Avoiding Duplication in const and Non-const Member Functions
+
 
 ```diff
 - Things to Remember
