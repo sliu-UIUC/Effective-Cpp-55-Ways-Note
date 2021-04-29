@@ -17,8 +17,32 @@ const char* const p = greeting; // const pointer,
 
 ```
 ```diff
-+ Rule of Thumb: If `const` appears to the left of *, what's pointed to is constant; if the word const appears to the right of *, the pointer is constant. 
++ If const appears to the left of *, what's pointed to is constant; appears to the right of *, the pointer is constant. 
 ```
+
+```C++
+void f1(const Widget *pw);     // f1 takes a pointer to a 
+                               // constant Widget object 
+                               
+void f2(Widget const *pw);     // so does f2
+```
+
+## STL Iterators
+
+Iterators are modeled on pointers and acts like a T* pointer. Declaring an iterator const is like declaring a pointer const (i.e., T* const): the iterator isn't allowed to point to something different, but the thing it points to may be modified. If you want an iterator that points to something that can't be modified (const T* analogue), you want a `const_iterator`: 
+
+```C++
+std::vector<int> v; 
+...
+const std::vector<int>::iterator iter = v.begin();   // iter acts like a T* const
+*iter = 10;                                          // OK, changes what iter points to
+++iter;                                              // ERROR! iter is const
+
+std::vector<int>::const_iterator cIter = v.begin();  // cIter acts like const T*
+*cIter = 10;                                         // ERROR! *cIter is const 
+++cIter;                                             // fine, changes cIter
+```
+
 ## III. Problem with function-like macros
 ```C++
 //call f with the maximum of a and b
