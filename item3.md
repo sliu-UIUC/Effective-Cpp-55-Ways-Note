@@ -44,20 +44,34 @@ std::vector<int>::const_iterator cIter = v.begin();  // cIter acts like const T*
 ```
 
 ## const Member Functions
+Identify which member functions may be invoked on const objects. Such member functions are important because: 
+* They make the interface of a class easier to understand. It's important to know which functions may modify an object and which may not. 
+* They make it possible to work with const objects. One of the most fundamental way to improve C++ program's performance is to pass objects by reference-to-const, a technique only viable if there are const member functions with which to manipulate the resulting const-qualified objects. 
 
-
-## III. Problem with function-like macros
-```C++
-//call f with the maximum of a and b
-#define CALL_WITH_MAX(a,b) f((a)>(b) ? (a):(b))
+```diff
++ In C++, member functions differ only in whether their constness can be overloaded. 
 ```
-Some people use macros like this to reduce overhead of function calls, but it has many painful drawbacks： 
-1. **Redundancy**: number of parenthesis. Easy to make mistakes.
-2. **Undefined behavior**: weird stuff can happen, even though you get all correctly: 
+
+```C++
+class TextBlock {
+public: 
+  ...
+  const char& operator[](std::size_t position) const {   // operator[] for const objects
+    return text[position]; 
+  }                         
+
+  char& operator[](std::size_t position) {               // operator[] for non-const objects
+    return text[position];
+  }
+  
+private:
+  std::string text; 
+}
+
+```
 
 
 ```diff
 - Things to Remember
 ```
-* For simple constants, prefer const objects or enums to #defines.
-* For function-like macros, prefer inline functions to #defines.
+* 
