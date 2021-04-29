@@ -43,6 +43,9 @@ std::vector<int>::const_iterator cIter = v.begin();  // cIter acts like const T*
 ++cIter;                                             // fine, changes cIter
 ```
 
+## const Member Functions
+
+
 ## III. Problem with function-like macros
 ```C++
 //call f with the maximum of a and b
