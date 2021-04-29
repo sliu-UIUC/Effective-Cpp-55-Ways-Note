@@ -16,6 +16,9 @@ const char* const p = greeting; // const pointer,
                                 // const data
 
 ```
+```diff
++ Rule of Thumb: If `const` appears to the left of *, what's pointed to is constant; if the word const appears to the right of *, the pointer is constant. 
+```
 ## III. Problem with function-like macros
 ```C++
 //call f with the maximum of a and b
