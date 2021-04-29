@@ -69,7 +69,24 @@ private:
 }
 
 ```
-
+TextBlock's operator[]s can be used like: 
+```C++
+TextBlock tb("Hello");        
+std::cout<<tb[0];             // calls non-const TextBlock::operator[]
+const TextBlock ctb("Hello");
+std::cout<<ctb[0];            // calls const TextBlock::operator[]
+```
+A more realistic reference-to-const example: 
+```C++
+void print(const TextBlock& ctb) {  // in this function, ctb is const
+  std::cout<<ctb[0];                // calls const TextBlock::operator[]
+  ...
+}
+```
+```diff
++ It's never legal to modify the return value of a function that returns a build-in type. 
++ Even if it were legal, the fact that C++ returns objects by value means that a copy of value is modified, not the value itself.
+```
 
 ```diff
 - Things to Remember
