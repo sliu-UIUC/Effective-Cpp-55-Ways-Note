@@ -132,7 +132,7 @@ std::size_t CTextBlock:::length() const {
 ```
 
 ## Avoiding Duplication in const and Non-const Member Functions
-
+`mutable` doesnt solve all const-related difficulties. 
 
 ```diff
 - Things to Remember
