@@ -132,7 +132,29 @@ std::size_t CTextBlock:::length() const {
 ```
 
 ## Avoiding Duplication in const and Non-const Member Functions
-`mutable` doesnt solve all const-related difficulties. 
+`mutable` doesnt solve all const-related difficulties. For instance: 
+```C++
+class TextBlock {
+public: 
+  ...
+  const char& operator[](std::size_t position) const {
+    ...                           // do bounds checking
+    ...                           // log access data
+    ...                           // verify data integrity
+    return text[position];
+  }
+
+  char& operator[](std::size_t position) {
+    ...                           // do bounds checking
+    ...                           // log access data
+    ...                           // verify data integrity
+    return text[position];
+  }
+private: 
+  std::string text;
+}
+```
+The above essentially create duplicate codes that increases compilation time, maintenance effort and code-bloat headache. Even though one might remove all the logic for boundary checking, log access data, etc, into a separate member function, it would still have duplicate calls to the function and the duplicated return statement code. 
 
 ```diff
 - Things to Remember
