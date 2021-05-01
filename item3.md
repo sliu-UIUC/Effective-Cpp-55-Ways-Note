@@ -179,6 +179,11 @@ public:
 ...
 }
 ```
+```diff
++ Notice that two casts are used here: 
++   `static_cast` add const to it (otherwise non-const `operator[]` would recursive call itself
++   `const_cast` cast away the const on op[]'s return type
+```
 
 ```diff
 - Things to Remember
