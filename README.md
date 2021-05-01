@@ -7,7 +7,9 @@ Chapter 1:  Basics
 2. [Prefer consts, enums, and inlines to #defines](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item2.md)
 3. [Use const whenever possible](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item3.md)
 4. [Make sure objects are initialized before used](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item4.md)
+
 Chapter 2: Constructors, Destructors, and Assignment Operators 
+
 5.  [Know what functions C++ silently writes and calls](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item5.md)
 6.  [Explicitly disallow the use of compiler-generated functions you do not want](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item6.md)
 7.  [Declare destructors virtual in polymorphic base classes](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item7.md)
