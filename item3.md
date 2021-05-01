@@ -156,7 +156,7 @@ private:
 ```
 The above essentially create duplicate codes that increases compilation time, maintenance effort and code-bloat headache. Even though one might remove all the logic for boundary checking, log access data, etc, into a separate member function, it would still have duplicate calls to the function and the duplicated return statement code. 
 
-In this case, we can use **casting**. In this case, since the const version of `operator[]` does exactly what the non-const version does, it just has a const-qualified return type. Casting away the const on the return value is safe, because calls to the non-const `operator[]` must have a non-const object in the first place, otherwise they couldnt have called a non-const function. It is a safe way for **solving code duplication**. 
+In this case, we can use *casting*. In this case, since the const version of `operator[]` does exactly what the non-const version does, it just has a const-qualified return type. Casting away the const on the return value is safe, because calls to the non-const `operator[]` must have a non-const object in the first place, otherwise they couldnt have called a non-const function. It is a safe way for **solving code duplication**. 
 
 ```C++
 class TextBlock {
