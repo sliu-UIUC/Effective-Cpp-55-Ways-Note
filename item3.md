@@ -182,9 +182,12 @@ public:
 ```diff
 + Notice that two casts are used here: 
 +   `static_cast` add const to it (otherwise non-const `operator[]` would recursive call itself
++        it enforces a sate conversion from a non-const object to a const one
 +   `const_cast` cast away the const on op[]'s return type
 ```
-
+```diff
+! Having the const version call the non-const version is not something you want to do. 
+```
 ```diff
 - Things to Remember
 ```
