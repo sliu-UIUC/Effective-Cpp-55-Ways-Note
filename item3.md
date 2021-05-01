@@ -180,15 +180,17 @@ public:
 }
 ```
 ```diff
-+ Notice that two casts are used here: 
++ Note: 
 +   `static_cast` add const to it (otherwise non-const `operator[]` would recursive call itself
 +        it enforces a sate conversion from a non-const object to a const one
 +   `const_cast` cast away the const on op[]'s return type
 ```
 ```diff
-! Having the const version call the non-const version is not something you want to do. 
+! Caution: having the const version call the non-const version is not something you want to do. Because non-const can change the logical state of the object.
 ```
 ```diff
 - Things to Remember
 ```
-* 
+* Declaring something const helps compilers detect usage errors. `const` can be applied to objects at any scope, to function parameters, return types and member functions as a whole. 
+* Compilers enforce bitwise constness, but you should program using conceptual/logical constness. 
+* When const and non-const member functions have basically identical implementations, having the non-const version to call the const version can be used to avoid code duplication.
