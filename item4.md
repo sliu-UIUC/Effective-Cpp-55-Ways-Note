@@ -10,3 +10,10 @@ double d;                              // initialization by reading from an inpu
 std::cin >> d;
 
 ```
+
+```diff
+- Things to Remember
+```
+* Manually initialize objects of build-in types, because C++ does not guarantee to initialize everytime. 
+* In a constructor, prefer use of the member initialization list to assignment inside the body of the constructor. List data members in the initialization list in the same order they're declared in the class. 
+* Avoid initialization order problems across translation units by replacing non-local static objects with local static objects.
