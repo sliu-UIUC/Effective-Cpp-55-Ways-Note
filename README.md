@@ -1,5 +1,5 @@
 # *Effective C++:  55 Ways to improve your programs and designs* Note (In Progress)
-This is a repository for notes I took when reading the book ***Effective C++ Third Edition: 55 Specific Ways to Improve Your Programs and Designs*** by Scott Meyers. The note contains of what are the important takeaways from the book. Note that this is not a redistribution of the content of the book, just some note I took for me to learn more about C++ programming language and design, and it would be a more convenient way to check for some coding decorum. Hopefully this can also help others who wish to improve their design of C++ programs.
+This is a repository for notes I took when reading the book ***Effective C++ Third Edition: 55 Specific Ways to Improve Your Programs and Designs*** by Scott Meyers. The note contains of what are the important concepts and examples from the book. Note that this is not a redistribution of the content of the book, just some note I took for me to learn more about C++ programming language and design, and it would be a more convenient way to check for some coding decorum. Instead, I strongly recommend every C++ programmers to purchase this book and read it through, and check back here for concepts rewind. Hopefully this can also help others who wish to improve their design of C++ programs.
 
 ## Chapter 1:  Basics
 1. [View C++ as a federation of languages](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item1.md)
@@ -17,3 +17,8 @@ This is a repository for notes I took when reading the book ***Effective C++ Thi
 10. [Have assignment operators return a reference to `*this`](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item10.md)
 11. [Handling assignment to self in `operator=`](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item11.md)
 12. [Copy all parts of an object](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item12.md)
+
+
+## Chapter 3: Resource Management
+
+13.  [Use objects to manage resources](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item13.md)
