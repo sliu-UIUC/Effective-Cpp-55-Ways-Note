@@ -12,7 +12,7 @@ This is a repository for notes I took when reading the book ***Effective C++ Thi
 5.  [Know what functions C++ silently writes and calls](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item5.md)
 6.  [Explicitly disallow the use of compiler-generated functions you do not want](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item6.md)
 7.  [Declare destructors virtual in polymorphic base classes](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item7.md)
-8.  [Prevent exceptions from leaving destructors.](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item8.md)
+8.  [Prevent exceptions from leaving destructors](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item8.md)
 9.  [Never call virtual functions during construction or destruction](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item9.md)
 10. [Have assignment operators return a reference to `*this`](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item10.md)
 11. [Handling assignment to self in `operator=`](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item11.md)
