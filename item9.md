@@ -1,1 +1,6 @@
-item 9 : Never call virtual functions during construction or destruction
+# Item 10: 
+
+
+```diff
+- Things to Remember
+```
