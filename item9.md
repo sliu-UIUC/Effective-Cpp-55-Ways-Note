@@ -10,7 +10,7 @@ public:
   ...
 };
 
-Transaction::Transaction() {                // implementation o fbasic class constructor
+Transaction::Transaction() {                // implementation of basic class constructor
   ...
   logTransaction();                         // as a final action, log this transaction
 }
@@ -27,6 +27,7 @@ public:
   ...
 }
 ```
+Suppose we call ```C++ BuyTransaction b;```
 
 ```diff
 - Things to Remember
