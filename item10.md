@@ -35,3 +35,5 @@ followed by all the built-in types as well as standard template library (STL).
 ```diff
 - Things to Remember
 ```
+
+* Having assignment operators return a reference to *this.
