@@ -1,5 +1,32 @@
 # Item 9: Never call virtual functions during construction or destruction
 
+Consider the following example.
+
+```C++
+class Transaction {                         // Base class for all transactions
+public: 
+  Transaction();
+  virtual void logTransaction() const = 0;  // make type-dependent log entry
+  ...
+};
+
+Transaction::Transaction() {                // implementation o fbasic class constructor
+  ...
+  logTransaction();                         // as a final action, log this transaction
+}
+
+class BuyTransaction: public Transaction {  // derived class
+public: 
+  virtual void logTransaction() const;      // how to log transactions of this type
+  ...
+};
+
+class SellTransaction: public Transaction { // derived class
+public: 
+  virtual void logTransaction() const;      // how to log transactions of this type
+  ...
+}
+```
 
 ```diff
 - Things to Remember
