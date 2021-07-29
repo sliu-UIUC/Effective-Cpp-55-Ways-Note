@@ -19,7 +19,7 @@ a[i] = a[j];     // potential assignment to self. (i = j)
 The two objects don't even need to be declared to be of the same type if they are from the same hierarchy, because a base class reference or pointer can refer or point to an object of a derived class type: 
 
 ```C++
-class Base {...} 
+class Base {...}
 class Derived: public Base {...}
 
 void doSomething(const Base& rb,           //rb and *pd might actually be the same object
