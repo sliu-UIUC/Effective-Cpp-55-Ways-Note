@@ -24,3 +24,5 @@ This is a repository for notes I took when reading the book ***Effective C++ Thi
 13.  [Use objects to manage resources](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item13.md)
 14.  [Think carefully about copying behavior in resource-managing classes](https://github.com/sliu-trinity/Effective-Cpp-55-Ways-Note/blob/master/item13=4.md)
 
+## Chapter 4: 
+
